@@ -1,38 +1,40 @@
-## **Control Raspberry Pi Digital Outputs with Python (LED)**
+## 버튼 LED
 
-### 1. **Creating Python Files**
+### 1단계: Python 파일 만들기
 
-- nano blinking_led.py
+- nano button_led.py
 
-### **2. Writing code**
+### 2단계: 코드 붙여넣기
 
 ```python
-from gpiozero import LED
-from time import sleep
+from gpiozero import Button, LED
+from signal import pause
 
 led = LED(14)
+button = Button(4)
 
-while True:
-    led.on()
-    print("LED ON")
-    sleep(1)
+button.when_pressed = led.on
+button.when_released = led.off
 
-    led.off()
-    print("LED OFF")
-    sleep(1)
+pause() 
 ```
 
-### 3. 저장하기
+### 3단계: 저장
 
-- nano 에디터에서:
+- nano에서:
 - Ctrl + O → 저장
 - Enter
 - Ctrl + X → 종료
 
-### 4. 실행하기
+### 4단계: 실행
 
-- python3 blinking_led.py
+- python3 button_led.py
 
-### 5. 멈추기
+### 5단계: 테스트
+
+- 버튼 누름 → LED 켜짐
+- 버튼 뗌 → LED 꺼짐
+
+### 6단계: 종료
 
 - Ctrl + C
