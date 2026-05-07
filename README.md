@@ -1,7 +1,5 @@
 # IoT26-HW02
-
 ## 버튼 LED
-
 ### 1단계: Python 파일 만들기
 
 - nano button_led.py
