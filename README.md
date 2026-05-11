@@ -1,10 +1,20 @@
-## 버튼 LED
+# 🔘 Read Digital Inputs with Python (Buttons and Other Peripherals)
 
-### 1단계: Python 파일 만들기
+## 1️⃣ 회로 조립
 
-- nano button_led.py
+- 참고 사이트를 보고 버튼과 LED 회로를 동일하게 구성하였다.
 
-### 2단계: 코드 붙여넣기
+---
+
+## 2️⃣ Python 파일 생성
+
+```bash
+nano button_led.py
+```
+
+---
+
+## 3️⃣ 코드 작성
 
 ```python
 from gpiozero import Button, LED
@@ -16,25 +26,25 @@ button = Button(4)
 button.when_pressed = led.on
 button.when_released = led.off
 
-pause() 
+pause()
 ```
 
-### 3단계: 저장
+---
 
-- nano에서:
-- Ctrl + O → 저장
-- Enter
-- Ctrl + X → 종료
+### 📷 nano 편집기에서 코드를 저장한 모습
 
-### 4단계: 실행
+![Nano Editor](images/button_led_editor.jpg)
 
-- python3 button_led.py
+---
 
-### 5단계: 테스트
+## 4️⃣ 실행
 
-- 버튼 누름 → LED 켜짐
-- 버튼 뗌 → LED 꺼짐
+```bash
+python3 button_led.py
+```
 
-### 6단계: 종료
+---
 
-- Ctrl + C
+### 🎞️ 버튼 입력 실행 GIF
+
+![Button LED Demo](images/button_led_demo.gif)
